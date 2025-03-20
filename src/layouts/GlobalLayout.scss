@@ -1,0 +1,131 @@
+// Override Ant Design layout background
+.ant-layout.dark {
+  background: #141414 !important;
+}
+
+.ant-layout.light {
+  background: #f5f5f5 !important;
+}
+
+.global-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  @media (min-width: 768px) {
+    padding: 0 50px;
+  }
+
+  &.light {
+    background: #fff;
+    border-color: #f0f0f0;
+  }
+
+  &.dark {
+    background: #141414;
+    border-color: #303030;
+  }
+}
+
+.site-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  &.light {
+    color: #000;
+  }
+
+  &.dark {
+    color: #fff;
+  }
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: flex-end;
+
+  @media (min-width: 768px) {
+    gap: 24px;
+  }
+}
+
+.nav-menu {
+  background: transparent !important;
+  border: none;
+  min-width: auto;
+
+  @media (min-width: 768px) {
+    min-width: 300px;
+  }
+
+  &.ant-menu-dark {
+    .ant-menu-item {
+      &:hover {
+        background-color: transparent !important;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &.ant-menu-item-selected {
+        background-color: transparent !important;
+
+        &::after {
+          display: block;
+          border-bottom: 2px solid #177ddc !important;
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  margin-top: 64px;
+  min-height: calc(100vh - 64px);
+  padding: 24px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  @media (min-width: 768px) {
+    padding: 24px 50px;
+  }
+
+  &.light {
+    background: #f5f5f5;
+  }
+
+  &.dark {
+    background: #141414;
+  }
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  background: transparent;
+  border-radius: 8px;
+
+  @media (min-width: 768px) {
+    padding: 24px;
+  }
+}
+
+.section {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+} 

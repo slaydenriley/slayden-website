@@ -1,0 +1,80 @@
+.section {
+  padding: 2rem 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+  }
+
+  &.light {
+    background: #fff;
+  }
+
+  &.dark {
+    background: #1f1f1f;
+  }
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.professional-summary {
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.skills-section {
+  margin: 3rem 0;
+
+  .ant-row {
+    margin-bottom: 2rem;
+  }
+
+  .skill-column {
+    margin-bottom: 2rem;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
+    h4 {
+      margin-bottom: 1.5rem;
+    }
+
+    .ant-space {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      
+      .ant-tag {
+        margin: 4px;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+
+  .ant-timeline-item-content {
+    margin-left: 1.5rem;
+  }
+} 
