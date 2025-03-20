@@ -2,7 +2,7 @@
   "name": "slayden-website",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://slaydenriley.github.io/slayden-website",
+  "homepage": "https://rileyslayden.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
