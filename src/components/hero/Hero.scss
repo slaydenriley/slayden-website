@@ -52,8 +52,36 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   font-size: 2rem;
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.9;
+    
+    .subtitle-item {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+    
+    .subtitle-separator {
+      margin: 0 0.5rem;
+      opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .hero-subtitle-text {

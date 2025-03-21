@@ -29,7 +29,18 @@ const Hero: React.FC<HeroProps> = ({ onSectionClick }) => {
                 Hi, I'm Riley Slayden
             </Title>
             <div className="hero-subtitle-container">
-                <span className="hero-subtitle-text">Software Engineer 👨‍💻 | Banjo Enthusiast 🪕</span>
+                <motion.div 
+                    className="hero-subtitle"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    <span className="subtitle-item">Software Engineer 👨‍💻</span>
+                    <span className="subtitle-separator">•</span>
+                    <span className="subtitle-item">Banjo Player 🪕</span>
+                    <span className="subtitle-separator">•</span>
+                    <span className="subtitle-item">Outdoor Enthusiast 🏔️</span>
+                </motion.div>
             </div>
             <Space size="large" className="hero-buttons">
                 <Button type="primary" size="large" icon={<CodeOutlined />} onClick={() => onSectionClick('about')}>
