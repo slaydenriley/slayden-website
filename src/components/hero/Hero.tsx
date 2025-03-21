@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Button, Space } from 'antd';
 import { motion } from 'framer-motion';
-import { ArrowDownOutlined, CodeOutlined } from '@ant-design/icons';
+import { CodeOutlined } from '@ant-design/icons';
 import { useTheme } from '../../contexts/ThemeContext';
 import './Hero.scss';
 
@@ -47,9 +47,6 @@ const Hero: React.FC<HeroProps> = ({ onSectionClick }) => {
                     About Me
                 </Button>
             </Space>
-            <div className="scroll-indicator">
-                <ArrowDownOutlined onClick={() => onSectionClick('about')} />
-            </div>
         </motion.section>
     );
 };

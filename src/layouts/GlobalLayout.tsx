@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Menu, Segmented } from "antd";
+import { Layout, Menu, Segmented, FloatButton } from "antd";
 import {
   HomeOutlined,
   FileOutlined,
@@ -119,6 +119,11 @@ const GlobalLayout: React.FC = () => {
         <div className="content-wrapper">
           <Home />
         </div>
+        <FloatButton.BackTop 
+          visibilityHeight={400}
+          style={{ backgroundColor: '#1677ff' }}
+          type="primary"
+        />
       </Content>
     </Layout>
   );
