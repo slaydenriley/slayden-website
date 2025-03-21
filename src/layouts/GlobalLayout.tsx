@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Menu, Segmented, Switch } from "antd";
+import { Layout, Menu, Segmented } from "antd";
 import {
   HomeOutlined,
   FileOutlined,
