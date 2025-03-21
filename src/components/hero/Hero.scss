@@ -28,6 +28,8 @@
   @media (max-width: 767px) {
     width: 150px;
     height: 150px;
+    margin-bottom: 1.25rem;
+    margin-top: 10px;
   }
 
   @media (max-width: 479px) {
@@ -52,7 +54,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 2rem;
 
   .hero-subtitle {
@@ -68,7 +70,7 @@
     
     .subtitle-item {
       display: inline-block;
-      padding: 0.5rem 1rem;
+      padding: 0.3rem 0.75rem;
       transition: all 0.3s ease;
       
       &:hover {
@@ -90,13 +92,15 @@
   }
 
   @media (max-width: 767px) {
+    margin-bottom: 1rem;
+    
     .hero-subtitle {
       font-size: 1.2rem;
       flex-direction: column;
       align-items: center;
       
       .subtitle-item {
-        padding: 0.3rem 0;
+        padding: 0.2rem 0;
       }
     }
   }
@@ -121,6 +125,10 @@
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+
+  @media (max-width: 767px) {
+    margin-top: 1rem;
+  }
 }
 
 .scroll-indicator {
