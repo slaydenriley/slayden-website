@@ -71,7 +71,10 @@ body {
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
+}
+
+.home-container {
+  padding-top: 30px;  // Just 20px additional padding as requested
 }
 
 // Card styles
@@ -126,15 +129,37 @@ body {
 // Responsive styles
 @media (max-width: 768px) {
   .ant-layout-content {
-    margin: 12px;
-    padding: 16px;
+    margin: 8px;
+    padding: 8px;
   }
 
   .home-container,
   .portfolio-container,
   .resume-container,
   .contact-container {
-    padding: 16px;
+    padding: 8px;
+  }
+
+  .home-container {
+    padding-top: 64px;  // Keep only the top padding consistent
+  }
+
+  .ant-card {
+    border-radius: 4px;
+    margin: 0;
+    
+    .ant-card-body {
+      padding: 12px;
+    }
+  }
+
+  // Reduce any nested card padding
+  .ant-card-body .ant-card {
+    margin: 8px 0;
+    
+    .ant-card-body {
+      padding: 8px;
+    }
   }
 }
 

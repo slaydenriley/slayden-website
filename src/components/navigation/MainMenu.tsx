@@ -1,22 +1,18 @@
 import React from 'react';
-import { Menu, Switch } from 'antd';
+import { Menu } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
   HomeOutlined,
   FolderOutlined,
   MailOutlined,
-  BulbOutlined,
 } from '@ant-design/icons';
 import { useTheme } from '../../contexts/ThemeContext';
+import './MainMenu.scss';
 
-interface MainMenuProps {
-  collapsed: boolean;
-}
-
-const MainMenu: React.FC<MainMenuProps> = ({ collapsed }) => {
+const MainMenu: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark } = useTheme();
 
   const menuItems = [
     {
@@ -44,37 +40,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ collapsed }) => {
         selectedKeys={[location.pathname]}
         items={menuItems}
         onClick={({ key }) => navigate(key)}
-        style={{ border: 'none' }}
+        className="main-menu"
       />
-      <div
-        style={{
-          padding: collapsed ? '8px 8px' : '16px',
-          textAlign: 'center',
-          borderTop: `1px solid ${isDark ? '#303030' : '#f0f0f0'}`,
-          backgroundColor: 'transparent',
-          position: 'absolute',
-          bottom: 48, // Account for the collapse button
-          left: 0,
-          right: 0,
-          zIndex: 1,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '8px',
-        }}
-      >
-        {!collapsed && <BulbOutlined style={{ fontSize: '16px', color: isDark ? '#fff' : '#000' }} />}
-        <Switch
-          checked={isDark}
-          onChange={toggleTheme}
-          checkedChildren={collapsed ? "🌙" : "Dark"}
-          unCheckedChildren={collapsed ? "☀️" : "Light"}
-          size={collapsed ? 'small' : 'default'}
-          style={{
-            backgroundColor: isDark ? '#177ddc' : '#1890ff',
-          }}
-        />
-      </div>
     </>
   );
 };

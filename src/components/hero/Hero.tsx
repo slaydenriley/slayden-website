@@ -22,17 +22,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionClick }) => {
             className={`section hero-section ${isDark ? 'dark' : 'light'}`}
             id="home"
         >
-            <motion.div 
-                className="profile-image-container"
-                animate={{ 
-                    y: [-5, 5, -5],
-                }}
-                transition={{ 
-                    repeat: Infinity, 
-                    duration: 5,
-                    ease: "easeInOut" 
-                }}
-            >
+            <motion.div className="profile-image-container">
                 <img src="images/profile.jpg" alt="Riley Slayden" />
             </motion.div>
             <Title level={1} className="hero-title">

@@ -7,6 +7,13 @@
   text-align: center;
   position: relative;
   overflow: visible;
+  margin-top: 64px;
+  padding-top: 20px;
+
+  @media (max-width: 767px) {
+    margin-top: 48px;
+    padding-top: 16px;
+  }
 }
 
 .profile-image-container {
@@ -16,6 +23,17 @@
   overflow: hidden;
   margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: float 5s ease-in-out infinite;
+
+  @media (max-width: 767px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 479px) {
+    width: 120px;
+    height: 120px;
+  }
 
   img {
     width: 100%;
@@ -104,6 +122,11 @@
   50% {
     transform: translateY(calc(var(--baseY) - 8px)) rotate(var(--rotation));
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-5px); }
+  50% { transform: translateY(5px); }
 }
 
 // Responsive adjustments

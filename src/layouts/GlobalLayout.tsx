@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Menu, Switch } from "antd";
+import { Layout, Menu, Segmented, Switch } from "antd";
 import {
   HomeOutlined,
   FileOutlined,
   MailOutlined,
+  SunFilled,
+  MoonFilled,
+  MenuFoldOutlined,
 } from '@ant-design/icons';
 import { useTheme } from "../contexts/ThemeContext";
 import Home from "../pages/home/Home";
@@ -94,14 +97,19 @@ const GlobalLayout: React.FC = () => {
             onClick={({ key }) => scrollToSection(key)}
             className="nav-menu"
             theme={isDark ? "dark" : "light"}
+            overflowedIndicator={<MenuFoldOutlined style={{ fontSize: '18px' }} />}
           />
           
           <div className="theme-toggle">
-            <Switch
-              checked={isDark}
-              onChange={toggleTheme}
-              checkedChildren="🌙 "
-              unCheckedChildren="☀️"
+            <Segmented
+              value={isDark ? 'dark' : 'light'}
+              onChange={() => toggleTheme()}
+              options={[
+                { value: 'light', icon: <SunFilled style={{ color: '#faad14' }} /> },
+                { value: 'dark', icon: <MoonFilled style={{ color: '#597ef7' }} /> },
+              ]}
+              size="large"
+          
             />
           </div>
         </div>

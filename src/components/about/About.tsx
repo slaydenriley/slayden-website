@@ -63,17 +63,7 @@ const About: React.FC = () => {
         open={showPDF}
         onCancel={() => setShowPDF(false)}
         width="75%"
-        style={{ 
-          top: '2vh',
-          maxWidth: '1100px'
-        }}
         footer={null}
-        styles={{
-          body: {
-            padding: '32px 0 0',
-            height: '96vh'
-          }
-        }}
         title={
           <Button
             type="primary"
@@ -82,9 +72,7 @@ const About: React.FC = () => {
             target="_blank"
             download
             size="middle"
-            style={{
-              marginLeft: '-8px'
-            }}
+            className="download-button"
           >
             Download PDF
           </Button>
@@ -104,7 +92,10 @@ const About: React.FC = () => {
 
       <div className="skills-section">
         <Title level={3}>Technical Skills</Title>
-        <Row gutter={[24, 24]}>
+        <Row gutter={[
+          { xs: 0, sm: 24 },
+          { xs: 0, sm: 24 }
+        ]}>
           {Object.entries(skillsData).map(([category, skills]) => (
             <Col xs={24} md={8} key={category}>
               <div className="skill-column">
@@ -119,11 +110,7 @@ const About: React.FC = () => {
                     >
                       <Tag
                         color="green"
-                        style={{ 
-                          padding: '4px 12px',
-                          fontSize: '14px',
-                          margin: '4px',
-                        }}
+                        className="skill-tag"
                       >
                         {skill}
                       </Tag>
